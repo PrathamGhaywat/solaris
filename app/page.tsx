@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Bg from "@/components/bg";
@@ -12,41 +12,18 @@ const beVietnamPro = Be_Vietnam_Pro({
 
 export default function Home() {
   return (
-    // <div className="flex justify-center flex-col items-center">
-    //   <Bg />
-    //   <div className="flex justify-center mt-32 pt-8 pr-4 gap-6 border-b border-r border-[#FFFFFF2a] w-[80vw]">
-    //     <div className="-mr-44 -ml-8 -rotate-90  whitespace-nowrap">
-    //       <p className="font-thin text-[#EEE] text-xs"> Your next building adventure </p>
-    //     </div>
-
-    //     <div className="w-2/3">
-    //       <h1 className={`${beVietnamPro.className} font-bold	text-[5.5rem] leading-none pb-6`}>Build your next project to the moon</h1>
-    //       <div className="w-[8vw] h-[4px] bg-[#FFF]"></div>
-    //     </div>
-    //     <div className="w-1/3">
-    //       <h1 className={`${beVietnamPro.className} font-light text-sm text-[#AAA]`}>The year is 2035. Settlers at Tranquility Base on the Moon, established in 2033, grapple with life-threatening problems. Solaris, a groundbreaking space agency in New York City calls upon high schoolers across the nation to build innovative technology to save the lives of Tranquility Base settlers.</h1>
-    //     </div>
-    //   </div>
-    // </div>
-    <div
-      className={`${beVietnamPro.className} flex justify-center flex-col items-center`}
-    >
+    <div className={`${beVietnamPro.className} flex justify-center flex-col`}>
       <motion.div
-        initial={{ borderColor: 'rgba(0, 0, 0, 0)' }}
-        animate={{ borderColor: '#FFFFFF2a'}}
-        transition={{ duration: 2 }}        
-        className="flex justify-center md:flex-row flex-col mt-40 w-[85vw] md:pr-4 gap-6 border-b md:border-r border-[#FFFFFF2a] md:w-[80vw]"
+        initial={{ borderColor: "rgba(0, 0, 0, 0)" }}
+        animate={{ borderColor: "#FFFFFF2a" }}
+        transition={{ duration: 2 }}
+        className="flex justify-center md:flex-row flex-col mt-40 w-[90vw] md:h-[50vh] md:pr-4 gap-6 border-b md:border-r border-[#FFFFFF2a] md:w-[85vw] ml-[2rem] md:ml-[10rem]"
       >
-        <div className="w-full md:w-2/3">
-          <h1
-            className={`font-bold	text-[4.5rem] md:text-[5.5rem] leading-none pb-12`}
-          >
-            Build your next project to the moon
-          </h1>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 4 }} transition={{ duration: 2 }} className="w-[8vw] h-[4px] bg-[#FFF] hidden md:block"></motion.div>
+        <div className="w-full md:w-2/3 md:pt-6 pt-20 md:p-0 font-bold	text-[4rem] md:text-[5.5rem] 2xl:text-[7rem] leading-none md:pb-12">
+          <h1>Build your next project to the moon</h1>
         </div>
-        <div className="w-2/3 md:w-1/3 pb-12">
-          <h1 className={` font-light md:text-sm text-xs text-[#AAA]`}>
+        <div className="w-4/5 md:w-1/3 md:p-0 pb-12 font-light text-sm 2xl:text-lg text-[#AAA]">
+          <h1>
             The year is 2035. Settlers at Tranquility Base on the Moon,
             established in 2033, grapple with life-threatening problems.
             Solaris, a groundbreaking space agency in New York City calls upon
@@ -54,8 +31,13 @@ export default function Home() {
             save the lives of Tranquility Base settlers.
           </h1>
         </div>
-        <div className="md:hidden block w-[12vw] h-[4px] bg-[#FFF]"></div>
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 4 }}
+        transition={{ duration: 2 }}
+        className="md:w-[10vw] w-[20vw] ml-[2rem] md:ml-[10rem] h-[4px] bg-[#FFF]"
+      ></motion.div>
     </div>
   );
 }

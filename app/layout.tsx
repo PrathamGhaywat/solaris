@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Nav from "@/components/nav"
-import Bg from "@/components/bg"
-import { Be_Vietnam_Pro } from 'next/font/google';
+import Nav from "@/components/nav";
+import Bg from "@/components/bg";
+import { Be_Vietnam_Pro } from "next/font/google";
 
 const beVietnamPro = Be_Vietnam_Pro({
-  subsets: ['latin'],
-  weight: ['400', '700'],
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,6 +25,7 @@ export default function RootLayout({
         className={`${beVietnamPro.className} antialiased overflow-x-hidden`}
       >
         <Bg />
+        <div className="bg-[url('/fuck_u.png')] bg-no-repeat bg-cover fixed w-[100vw] h-[100vh]"></div>
         <Nav />
         {children}
       </body>
