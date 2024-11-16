@@ -20,12 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${beVietnamPro.className} antialiased overflow-x-hidden`}
       >
         <Bg />
-        <div className="bg-[url('/fuck_u.png')] bg-no-repeat bg-cover fixed w-[100vw] h-[100vh]"></div>
         <Nav />
         {children}
       </body>
