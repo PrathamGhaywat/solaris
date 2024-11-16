@@ -26,7 +26,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="tracking-wide w-full md:w-2/3 md:pt-6 pt-20 md:p-0 font-bold	text-[4rem] md:text-[5.5rem] 2xl:text-[7rem] leading-none md:pb-12"
+            className="tracking-tighter	 w-full md:w-2/3 md:pt-6 pt-20 md:p-0 font-bold	text-[4.2rem] md:text-[6rem] 2xl:text-[8rem] leading-none md:pb-12"
           >
             <h1>Build your next project to the moon</h1>
           </motion.div>
