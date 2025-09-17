@@ -13,6 +13,7 @@ export default function Bg() {
         <motion.svg
           preserveAspectRatio="xMidYMid slice"
           width="100vw"
+          height="100vh"
           className="absolute md:block hidden z-[-1]"
           viewBox="0 0 1728 1117"
           fill="none"
@@ -113,6 +114,7 @@ export default function Bg() {
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid slice"
           width="100vw"
+          height="100vh"
           className="absolute md:hidden block z-[-1]"
           initial="hidden"
           animate="visible"
@@ -171,7 +173,7 @@ export default function Bg() {
         viewBox="0 0 284 1048"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute 2xl:mx-[1rem] right-0 md:block hidden left-0 my-4 z-[-1]"
+        className="absolute left-8 my-4 z-[-1] md:block hidden"
       >
         <motion.line
           x2="9.5"
