@@ -1,6 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Space_Grotesk } from "next/font/google";
+
+// Initialize the Space Grotesk font
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["700"], // Using a bold weight for the button
+});
 
 export default function HeroContent() {
   return (
@@ -9,7 +16,7 @@ export default function HeroContent() {
         initial={{ borderColor: "rgba(0, 0, 0, 0)" }}
         animate={{ borderColor: "#FFFFFF2a" }}
         transition={{ duration: 2 }}
-        className="flex justify-center md:flex-row flex-col w-[90vw] md:pr-4 gap-6 md:border-r border-[#FFFFFF2a] md:w-[85vw] ml-[5vw] md:ml-[7.5vw] pb-48"
+        className="flex justify-center md:flex-row flex-col w-full md:pr-4 gap-6 md:border-r border-[#FFFFFF2a] pb-48"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -17,7 +24,7 @@ export default function HeroContent() {
           transition={{ duration: 1 }}
           className="tracking-tighter	 w-full md:w-2/3 md:p-0 font-bold	text-[4.2rem] md:text-[6rem] 2xl:text-[8rem] leading-none"
         >
-          <h1>Build your next project to the moon</h1>
+          <h1>The most funded high school hackathon.</h1>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
@@ -26,19 +33,39 @@ export default function HeroContent() {
           className="w-4/5 md:w-1/3 md:p-0 pb-12 font-light text-sm 2xl:text-lg text-[#AAA]"
         >
           <h1>
-            The year is 2035. Settlers at Tranquility Base on the Moon,
-            established in 2033, grapple with life-threatening problems.
-            Solaris, a groundbreaking space agency in New York City calls upon
-            high schoolers across the nation to build innovative technology to
-            save the lives of Tranquility Base settlers.
+            Through our custom platform, Launchpad, we're leveraging that
+            funding to empower every single participant. You will receive over
+            $20,000 in enterprise-grade cloud resources from Google Cloud,
+            completely free of charge, to build out your projects. Bring your
+            biggest ideas—we'll provide the infrastructure to launch them.
           </h1>
+
+          {/* Register Button - Now a link */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            className="mt-8"
+          >
+            <a
+              href="https://solaris.devpost.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                className={`${spaceGrotesk.className} bg-white text-black font-bold uppercase tracking-wider px-6 py-2 rounded-none hover:bg-gray-200 transition-colors duration-300`}
+              >
+                Register
+              </button>
+            </a>
+          </motion.div>
         </motion.div>
       </motion.div>
 
       {/* Container for both lines */}
-      <div className="relative ml-[5vw] md:ml-[7.5vw]">
+      <div className="relative">
         {/* The thin, semi-transparent line */}
-        <div className="h-px w-[90vw] md:w-[85vw] bg-white/20"></div>
+        <div className="h-px w-full bg-white/20"></div>
 
         {/* The thick, animated line, positioned on top */}
         <motion.div
