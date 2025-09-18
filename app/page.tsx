@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Bg from "@/components/bg";
 import { Be_Vietnam_Pro } from "next/font/google";
-import { motion } from "framer-motion";
+import HeroContent from "@/components/hero-content";
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -11,47 +10,81 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export default function Home() {
+  const teamMembers = Array(6).fill(0); // Placeholder for 6 team members
+
   return (
     <>
       <div className="bg-[url('/noise.png')] bg-no-repeat bg-cover fixed w-[100vw] h-[100vh]"></div>
 
-      <div className={`${beVietnamPro.className} flex justify-center flex-col`}>
-        <motion.div
-          initial={{ borderColor: "rgba(0, 0, 0, 0)" }}
-          animate={{ borderColor: "#FFFFFF2a" }}
-          transition={{ duration: 2 }}
-          className="flex justify-center md:flex-row flex-col mt-40 w-[90vw] md:h-[50vh] md:pr-4 gap-6 border-b md:border-r border-[#FFFFFF2a] md:w-[85vw] ml-[5vw] md:ml-[7.5vw]"
-        >
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="tracking-tighter	 w-full md:w-2/3 md:pt-6 pt-20 md:p-0 font-bold	text-[4.2rem] md:text-[6rem] 2xl:text-[8rem] leading-none md:pb-12"
-          >
-            <h1>Build your next project to the moon</h1>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2, delay: 1 }}
-            className="w-4/5 md:w-1/3 md:p-0 pb-12 font-light text-sm 2xl:text-lg text-[#AAA]"
-          >
-            <h1>
-              The year is 2035. Settlers at Tranquility Base on the Moon,
-              established in 2033, grapple with life-threatening problems.
-              Solaris, a groundbreaking space agency in New York City calls upon
-              high schoolers across the nation to build innovative technology to
-              save the lives of Tranquility Base settlers.
-            </h1>
-          </motion.div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="md:w-[10vw] w-[20vw] ml-[5vw] md:ml-[7.5vw] h-[4px] bg-[#FFF]"
-        ></motion.div>
+      {/* Hero Section */}
+      <div className={`${beVietnamPro.className} h-screen pt-40`}>
+        <HeroContent />
       </div>
+
+      {/* About Us Section */}
+      <section className="bg-white text-black py-20 md:py-32">
+        <div className="container mx-auto px-6 md:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-center">
+            About Us
+          </h2>
+          <p className="mt-4 text-lg text-gray-600 text-center max-w-2xl mx-auto">
+            More information about Solaris as a hackathon and the team.
+          </p>
+
+          <div className="mt-16 flex flex-col md:flex-row gap-12 md:gap-16 items-center">
+            {/* Left Column: Avatars */}
+            <div className="w-full md:w-1/2">
+              <div className="grid grid-cols-3 gap-6">
+                {teamMembers.map((_, index) => (
+                  <div key={index} className="flex flex-col items-center">
+                    <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center">
+                      <svg
+                        className="w-12 h-12 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p className="mt-2 font-semibold text-gray-800">
+                      Team Member
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Text */}
+            <div className="w-full md:w-1/2">
+              <p className="text-gray-700 leading-relaxed">
+                Solaris is more than just a hackathon; it's a launchpad for the
+                next generation of innovators, thinkers, and builders. Our
+                mission is to create an environment where creativity thrives and
+                students can push the boundaries of technology to solve
+                real-world challenges. We believe in the power of collaboration
+                and provide the resources, mentorship, and platform for high
+                schoolers to bring their most ambitious ideas to life.
+              </p>
+              <p className="mt-4 text-gray-700 leading-relaxed">
+                Our team is composed of passionate students and industry
+                professionals dedicated to fostering a love for technology and
+                problem-solving. We work year-round to organize a world-class
+                event that is not only challenging but also inclusive and fun.
+                From logistics and sponsorships to workshop planning and mentor
+                outreach, we are the driving force ensuring every participant
+                has an unforgettable and rewarding experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
